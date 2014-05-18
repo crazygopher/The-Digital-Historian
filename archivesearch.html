@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <script type="text/javascript">
+  function dosearch() {
+    var sf=document.searchform;
+    var submitto = sf.sengines.options[sf.sengines.selectedIndex].value + escape(sf.searchterms.value);
+    window.location.href = submitto;
+    return false;
+}
+  </script>
+  <title>The Digital Historian</title>
+  <link href="master.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body>
+  <div id="header">
+  <img src="title.jpg"><br>
+  <nav>
+    <ul style="list-style-type: none">
+      <li class="navbar"><a href="index.html">Home</a></li>
+      <li class="navbar"><a href="about.html">About Me</a></li>
+      <li class="navbar"><a href="history.html">History</a></li>
+      <li class="navbar"><a href="webdev.html" class="current">Web Development</a></li>
+      <li class="navbar"><a href="education.html">Education</a></li>
+    </ul>
+  </nav>
+  </div>
+  <form name="searchform" onSubmit="return dosearch();">
+    Search:
+      <select name="sengines">
+      <option value="http://cdnc.ucr.edu/cgi-bin/cdnc?a=q&hs=1&r=1&results=1&txq=" selected>California Newspapers</option>
+      <option value="http://www.sos.wa.gov/legacy/newspapers_results.aspx?k=">Washington Newspapers</option>
+      <option value="http://ehistory.osu.edu/osu/search/searchAction_OR.cfm?keyWords=">Official Records of the Civil War</option>
+      <option value="http://digital.lib.washington.edu/findingaids/search?keyword=">University of Washington Archives</option>
+      </select>
+    For:
+      <input type="text" name="searchterms">
+      <input type="submit" name="SearchSubmit" value="Search">
+  </form>
+</body><br>
+<footer>
+  &copy;Copyright, 2014. Designed by <a href="mailto:bacarter@thedigitalhistorian.net" style="color: black">Bryan A. Carter</a>.
+</footer>
+</html>
